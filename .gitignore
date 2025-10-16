@@ -1,0 +1,116 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.so
+*.dylib
+*.dll
+
+# Virtual environments
+.venv
+.env
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+.environment
+config.json
+secrets.json
+credentials.json
+*.key
+*.pem
+*.p12
+*.pfx
+
+# API Keys and tokens
+.api_keys
+.tokens
+.secrets
+*_api_key*
+*_secret_key*
+*_token*
+api_keys.txt
+secrets.txt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+database.json
+*.sql
+
+# Log files
+*.log
+logs/
+log/
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE and editor files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.iml
+*.ipr
+*.iws
+.sublime-project
+.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Local configuration
+local_config.py
+local_settings.py
+config_local.py
+settings_local.py
+
+# Output files and results
+output/
+results/
+exports/
+downloads/
+
+# Cache directories
+.cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Model files (pueden ser grandes)
+*.pkl
+*.joblib
+*.model
+models/
+checkpoints/
+
+# Data files (potencialmente sensibles)
+data/private/
+data/personal/
+*.csv
+*.xlsx
+*.json
+!example.json
+!sample.json
