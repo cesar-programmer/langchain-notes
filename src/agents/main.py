@@ -7,11 +7,11 @@ def get_weather(city: str) -> str:
     return f"It's always sunny in {city}!"
 
 # Initialize the Gemini modelt
-#model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+model = ChatGoogleGenerativeAI(model="gemini-2.5-pro")
 
 agent = create_agent(
-    #model=model,
-    model='openai:gpt-4o-mini',
+    model=model,
+    #model='openai:gpt-4o-mini',
     tools=[get_weather],
     system_prompt="You are a helpful assistant",
 )
