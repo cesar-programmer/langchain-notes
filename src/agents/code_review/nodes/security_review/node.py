@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from langchain.chat_models import init_chat_model
 from agents.code_review.state import State
-
+from agents.code_review.nodes.security_review.prompt import SYSTEM_PROMPT
 llm = init_chat_model("gemini-2.5-flash", model_provider="google_genai", temperature=1)
 
 
@@ -13,9 +13,8 @@ class SecurityReview(BaseModel):
 
 def security_review(state: State):
     code = state['code']
-    # aqui se podria usar un system prompt mas detallado y ponerlo en otra carpeta y solo importarlo
     messages = [
-        ("system", "You are an expert in code security. Focus on identifying security vulnerabilities, injection risks, and authentication issues."),
+        ("system", SYSTEM_PROMPT),
         ("user", f"Review this code: {code}")
     ]
     llm_with_structured_output = llm.with_structured_output(SecurityReview)

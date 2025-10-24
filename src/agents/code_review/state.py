@@ -4,4 +4,5 @@ class State(TypedDict):
     code: str
     security_review: Dict[str, Any]
     maintainability_review: Dict[str, Any]
+    optimizer: Dict[str, Any]
     final_review: str

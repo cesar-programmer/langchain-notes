@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from agents.code_review.state import State
 from langchain.chat_models import init_chat_model
-
+from agents.code_review.nodes.maintainability_review.prompt import SYSTEM_PROMPT
 
 llm = init_chat_model("gemini-2.5-flash", model_provider="google_genai", temperature=1)
 
@@ -14,7 +14,7 @@ class MaintainabilityReview(BaseModel):
 def maintainability_review(state: State):
     code = state['code']
     messages = [
-        ("system", "You are an expert in code quality. Focus on code structure, readability, and adherence to best practices."),
+        ("system", SYSTEM_PROMPT),
         ("user", f"Review this code: {code}")
     ]
     llm_with_structured_output = llm.with_structured_output(MaintainabilityReview)
